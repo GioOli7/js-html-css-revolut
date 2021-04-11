@@ -39,7 +39,7 @@ header {
 
 /* logo animation */
 .rotate-center:hover svg {
-	animation: rotate-center 0.6s ease both;
+	animation: rotate-center 0.4s ease both;
 }
 
  @keyframes rotate-center {
@@ -54,11 +54,25 @@ header {
 
 .nav_link {
     text-decoration: none;
-    color: gray;
+    color: rgb(150, 150, 150);
 }
 
 .nav_link:hover {
     color: black;
+}
+
+.nav_link.coming-soon {
+    color: lightgrey;
+    cursor: not-allowed;
+}
+
+.nav_link.coming-soon::after {
+    content: "coming soon";
+    position: relative;
+    top: -15px;
+    left: -30px;
+    font-size: 10px;
+    color: dodgerblue;
 }
 
 .btn {
@@ -94,7 +108,7 @@ header {
 .dropdown_menu {
     display: none; /*jQuery*/
     position: absolute;
-    top: 150%;
+    top: 200%;
     left: -30px;
     padding: 20px 30px;
     background-color: #fff;
@@ -102,6 +116,28 @@ header {
 }
 
 .dropdown_menu li:not(:last-child) {
-    padding-bottom: 20px;
+    padding-bottom: 25px;
 }
 
+/* custom setting for this big dropdown menu */
+.dropdown_menu.features {
+    left: -235px;
+    padding: 30px 40px;
+}
+
+.dropdown_menu-col {
+    /* background: red; */
+    width: 200px;
+    height: 100%;
+}
+
+.dropdown_menu-col .list-title {
+    font-size: 11px;
+    font-weight: bold;
+    color: #c1beb8;
+}
+
+.list-title i {
+    font-size: 20px;
+    padding-right: 5px;
+}
